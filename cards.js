@@ -204,3 +204,43 @@
       return value*value
    })
    console.log( result);
+
+// game snake,water and gun 
+
+let user =prompt("You have to choose 1 option between 3: snake,water,gun"  ).toLowerCase().trim();
+let rdm = Math.floor(Math.random()*3);
+let options = [ "snake","gun","water"][rdm] ;
+
+ document.write(" You choose :" + user +"</br>" );
+ document.write(" random one is :" + rdm +"</br>");
+const match = (options ,user)=>{
+if(options === user ){
+    return "nobody. match is tie"
+}
+else if( options === "snake" && options  === "water"){
+    return " rdm" ;
+
+}
+else if( options  === "gun" && user === "water"){
+    return " user" ;
+
+}
+else if( options === "snake" && user === "gun"){
+    return " user" ;
+
+}
+else if( options === "gun" && user === "snake"){
+    return " rdm" ;
+
+}
+else if( options === "water" && user === "snake"){
+    return " user" ;
+
+}
+else if( options === "water" && user === "gun"){
+    return " rdm" ;
+
+}
+}
+ let result = match ( options ,user)
+document.write(  "The winner is :" + result)
